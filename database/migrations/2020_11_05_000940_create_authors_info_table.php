@@ -18,7 +18,6 @@ class CreateAuthorsInfoTable extends Migration
             $table->string("country", 30);
             $table->text("bio")->nullable();
             $table->string("image")->default("https://comicvine1.cbsistatic.com/uploads/scale_small/11111/111118938/7053073-miura.jpg");
-            $table->timestamps();
         });
     }
 
