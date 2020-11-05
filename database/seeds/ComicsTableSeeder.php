@@ -20,8 +20,7 @@ class ComicsTableSeeder extends Seeder
                 if(rand(0,1) == 1) {
                     $newComic->original_title = $faker->text(50);
                 };
-            $newComic->story_by = $faker->name();
-            $newComic->draws_by = $faker->name();            
+            $newComic->author = $faker->name();        
             $newComic->country = $faker->state();
             $newComic->volumes = $faker->numberBetween(1, 250);
             $newComic->edition = $faker->company();
@@ -29,7 +28,7 @@ class ComicsTableSeeder extends Seeder
             $newComic->color = rand(0, 1);
             $newComic->release = $faker->date();
             $newComic->price = $faker->randomFloat(2, 0, 800);
-            $newComic->cover = "https://picsum.photos/200/300";
+            $newComic->cover = $faker->imageUr(200, 300);
             $newComic->save();
         }
     }

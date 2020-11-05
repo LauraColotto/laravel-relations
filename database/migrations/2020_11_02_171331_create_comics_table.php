@@ -16,8 +16,7 @@ class CreateComicsTable extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string("title", 50);
-            $table->string("story_by", 50);
-            $table->string("draws_by", 50);
+            $table->string("author", 50);
             $table->string("original_title", 50)->nullable();
             $table->string("country", 30);
             $table->smallInteger("volumes");
@@ -26,7 +25,7 @@ class CreateComicsTable extends Migration
             $table->boolean("color")->default(false);
             $table->date("release");
             $table->float("price", 5,2);
-            $table->string("cover")->default("https://picsum.photos/200/300");
+            $table->string("cover");
             $table->timestamps();
         });
     }
