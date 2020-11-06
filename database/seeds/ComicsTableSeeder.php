@@ -23,15 +23,15 @@ class ComicsTableSeeder extends Seeder
                 if(rand(0,1) == 1) {
                     $newComic->original_title = $faker->text(50);
                 };
-            $newComic->author = $author->id;        
+            $newComic->author_id = $author->id;        
             $newComic->country = $faker->state();
             $newComic->volumes = $faker->numberBetween(1, 250);
-            $newComic->edition = $faker->company();
+            $newComic->edition = $faker->word();
             $newComic->reading = (rand(0,1) == 1) ? "LT" : "RT";
             $newComic->color = rand(0, 1);
             $newComic->release = $faker->date();
             $newComic->price = $faker->randomFloat(2, 0, 800);
-            $newComic->cover = $faker->imageUr(200, 300);
+            $newComic->cover;
             $newComic->save();
         }
     }

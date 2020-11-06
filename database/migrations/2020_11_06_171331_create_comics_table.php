@@ -15,8 +15,8 @@ class CreateComicsTable extends Migration
     {
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id')->constrained();
             $table->string("title", 50);
-            $table->string("author", 50);
             $table->string("original_title", 50)->nullable();
             $table->string("country", 30);
             $table->smallInteger("volumes");
@@ -25,7 +25,7 @@ class CreateComicsTable extends Migration
             $table->boolean("color")->default(false);
             $table->date("release");
             $table->float("price", 5,2);
-            $table->string("cover");
+            $table->string("cover")->default("https://comicvine1.cbsistatic.com/uploads/scale_small/11111/111118938/7053073-miura.jpg");
             $table->timestamps();
         });
     }
