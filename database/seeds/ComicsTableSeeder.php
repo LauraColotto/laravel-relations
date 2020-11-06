@@ -16,6 +16,8 @@ class ComicsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 20; $i++) {
 
+            $author = Author::inRandomOrder()->first();
+            
             $newComic = new Comic();
             $newComic->title = $faker->text(50);
                 if(rand(0,1) == 1) {

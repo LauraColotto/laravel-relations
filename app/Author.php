@@ -12,6 +12,6 @@ class Author extends Model
     }
     public function comics()
     {
-        return $this->hasOne("App\Comic");
+        return $this->hasMany("App\Comic");
     }
 }

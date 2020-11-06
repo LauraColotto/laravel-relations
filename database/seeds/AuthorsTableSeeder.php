@@ -17,7 +17,7 @@ class AuthorsTableSeeder extends Seeder
 
             $newAuthor = new Author();
             $newAuthor->name = $faker->firstName();
-            $newAuthor->name = $faker->lastName();
+            $newAuthor->lastname = $faker->lastName();
             $newAuthor->date_of_birth = $faker->date();
             $newAuthor->save();
         }
